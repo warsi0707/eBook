@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function Add() {
+export default function Edit() {
   return (
     <>
-       <div className='text-2xl text-center my-5'>
-    <h1>Add Your Book</h1>
+        <div className='text-2xl text-center my-5'>
+    <h1>Edit  Book</h1>
     </div>
     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
         
@@ -40,12 +40,13 @@ export default function Add() {
         </div>
       </div>
       <div>
-        <button type="submit" className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add</button>
+        <button type="submit" className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Make changes</button>
       </div>
 
     </form>
 
   </div>
+      
     </>
   )
 }
