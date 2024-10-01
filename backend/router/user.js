@@ -108,7 +108,7 @@ router.post("/create", auth, async(req, res) =>{
         })
     }
 })
-router.get("/books", auth, async(req, res) =>{
+router.get("/books",  async(req, res) =>{
     const allBook = await Book.find({})
     res.json({
         allBook: allBook
