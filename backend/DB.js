@@ -3,12 +3,10 @@ const Schema = mongoose.Schema;
 
 const UserSchema = mongoose.Schema({
     name: String,
+    password : String,
     phone: {type: Number, unique:true},
     email: {type: String, unique: true},
-    books: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Book"
-    }]
+   
 })
 const BookSchema = mongoose.Schema({
     bookTitle: String,
