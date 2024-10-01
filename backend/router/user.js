@@ -5,8 +5,20 @@ const jwt = require("jsonwebtoken")
 const { USER_JWT_SECRET } = require("../config")
 const { User, Book } = require("../DB")
 const {auth} = require("../middleware/user")
+const {z} = require("zod")
 
 router.post("/signup", async(req, res) =>{
+    const requireBody = z.object({
+        name: z.string().min(3).max(50),
+        password: z.string().min(3).max(50),
+        phone: z.number().min(5).max(20),
+        email: z.string().min(3).max(50).email()
+    })
+    const  validation = requireBody.safeParse(req.body)
+    res.json({
+        message: "incorrect fromate",
+        error: validation.error
+    })
     const {name, phone, email ,password}= req.body;
     const hashPassword = await bcrypt.hash(password, 5)
 
@@ -38,6 +50,15 @@ router.post("/signup", async(req, res) =>{
     }
 })
 router.post("/signin",async (req, res) =>{
+    const requireBody = z.object({
+        email: z.string().min(3).max(50).email(),
+        password: z.string().min(3).max(50)
+    })
+    const  validation = requireBody.safeParse(req.body)
+    res.json({
+        message: "incorrect fromate",
+        error: validation.error
+    })
     const { email, password} = req.body;
     try{
         const finduser = await User.findOne({
