@@ -9,17 +9,17 @@ const {z} = require("zod")
 const flash = require("connect-flash")
 
 router.post("/signup", async(req, res) =>{
-    // const requireBody = z.object({
-    //     name: z.string().min(3).max(50),
-    //     password: z.string().min(3).max(50),
-    //     phone: z.number().min(5).max(20),
-    //     email: z.string().min(3).max(50).email()
-    // })
-    // const  validation = requireBody.safeParse(req.body)
-    // res.json({
-    //     message: "incorrect fromate",
-    //     error: validation.error
-    // })
+    const requireBody = z.object({
+        name: z.string().min(3).max(50),
+        password: z.string().min(3).max(50),
+        phone: z.number().min(5).max(20),
+        email: z.string().min(3).max(50).email()
+    })
+    const  validation = requireBody.safeParse(req.body)
+    res.json({
+        message: "incorrect fromate",
+        error: validation.error
+    })
     const {name, phone, email ,password}= req.body;
     const hashPassword = await bcrypt.hash(password, 5)
 

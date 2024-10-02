@@ -4,8 +4,6 @@ import { FaEdit } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 
-
-
 export default function Home() {
   const [data, setData] = useState([])
   const [message, setMessage] = useState()
@@ -20,7 +18,7 @@ export default function Home() {
     const response = await fetch(`http://localhost:3000/api/user/delete/${id}`,{
       method: "DELETE"
     })
-    const result = await response.json()
+    // const result = await response.json()
     // console.log(result)
     if(response.ok){
       setMessage("deleted successfully") 

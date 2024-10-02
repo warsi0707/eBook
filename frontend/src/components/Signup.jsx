@@ -28,7 +28,7 @@ export default function Signup() {
       setEmail("")
       setPassword()
       setphone()
-      navigate("/login",{
+      navigate("/signin",{
         state: {message: `Hello ${name}  please log in `}
       })
     }
