@@ -12,7 +12,7 @@ export default function Signup() {
   const handleSubmit=async(e)=>{
     e.preventDefault()
     const adduser = {name, email, password, phone}
-    const response = await fetch("http://localhost:3000/api/user/signup",{
+    const response = await fetch("https://ebook-dgdk.onrender.com/api/user/signup",{
       method: "POST",
       headers: {
         "Content-Type": "Application/json"

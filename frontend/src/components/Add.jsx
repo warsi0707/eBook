@@ -11,7 +11,7 @@ export default function Add() {
   const handleAdd = async(e)=>{
     e.preventDefault()
     const addBook = {bookTitle, author, genre, yop}
-    const respone = await fetch("http://localhost:3000/api/user/create",{
+    const respone = await fetch("https://ebook-dgdk.onrender.com/api/user/create",{
       method: "POST",
       headers: {
         "Content-Type": "Application/json"

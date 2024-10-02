@@ -9,13 +9,13 @@ export default function Home() {
   const [message, setMessage] = useState()
 
   const getData =async()=>{
-    const response = await fetch("http://localhost:3000/api/user/books")
+    const response = await fetch("https://ebook-dgdk.onrender.com/api/user/books")
     const result = await response.json()
     setData(result.allBook)
     // console.log(result.allBook)
   }
   const deleteBook =async(id)=>{
-    const response = await fetch(`http://localhost:3000/api/user/delete/${id}`,{
+    const response = await fetch(`https://ebook-dgdk.onrender.com/api/user/delete/${id}`,{
       method: "DELETE"
     })
     // const result = await response.json()

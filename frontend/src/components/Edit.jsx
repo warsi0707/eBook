@@ -12,7 +12,7 @@ export default function Edit() {
   const {id} = useParams()
 
   const singleData =async()=>{
-    const response = await fetch(`http://localhost:3000/api/user/book/${id}`)
+    const response = await fetch(`https://ebook-dgdk.onrender.com/api/user/book/${id}`)
     const result = await response.json()
     const data = result.book
     console.log(result.book)
@@ -27,7 +27,7 @@ export default function Edit() {
   const updateBook =async(e)=>{
     e.preventDefault()
     const updateUser = {bookTitle, author, genre, yop}
-    const response = await fetch(`http://localhost:3000/api/user/edit/${id}`,{
+    const response = await fetch(`https://ebook-dgdk.onrender.com/api/user/edit/${id}`,{
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
