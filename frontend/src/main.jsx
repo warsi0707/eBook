@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     element: <><Navbar/><Add/></>
   },
   {
-    path: "/login",
+    path: "/signin",
     element: <><Navbar/><Login/></>
   },
   {
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
     element: <><Navbar/><Signup/></>
   },
   {
-    path: "/edit", //:id add
+    path: "/edit/:id", //:id add
     element: <><Navbar/><Edit/></>
   }
 ])

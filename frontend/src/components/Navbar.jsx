@@ -8,7 +8,7 @@ export default function Navbar() {
         <div className='flex gap-3'>
             <a href="/add" className='hover:text-red-500'>Add</a>
             <a href="/signup" className='hover:text-red-500'>Signup</a>
-            <a href="/login" className='hover:text-red-500'>Login</a>
+            <a href="/signin" className='hover:text-red-500'>Login</a>
         </div>
 
     </div>
